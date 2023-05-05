@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise Tracker</title>
+</head>
+<body>
+    <h1>Exercise Tracker</h1>
+    <form method="POST" action="{{ url_for('run_script') }}">
+        <p>Select an exercise:</p>
+        <input type="radio" name="exercise_type" value="push-up" id="push-up" checked>
+        <label for="push-up">Push-up</label><br>
+        <input type="radio" name="exercise_type" value="barbell-bicep" id="barbell-bicep">
+        <label for="barbell-bicep">Barbell Bicep Curls</label><br>
+        <input type="radio" name="exercise_type" value="pull-up" id="pull-up">
+        <label for="pull-up">Pull-up</label><br>
+        <input type="radio" name="exercise_type" value="squat" id="squat">
+        <label for="squat">Squat</label><br>
+        <input type="radio" name="exercise_type" value="walk" id="walk">
+        <label for="walk">Walk</label><br>
+        <input type="radio" name="exercise_type" value="sit-up" id="sit-up">
+        <label for="sit-up">Sit-up</label><br>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
