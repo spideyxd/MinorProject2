@@ -1,27 +1,289 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Exercise Tracker</title>
-</head>
-<body>
-    <h1>Exercise Tracker</h1>
-    <form method="POST" action="{{ url_for('run_script') }}">
-        <p>Select an exercise:</p>
-        <input type="radio" name="exercise_type" value="push-up" id="push-up" checked>
-        <label for="push-up">Push-up</label><br>
-        <input type="radio" name="exercise_type" value="barbell-bicep" id="barbell-bicep">
-        <label for="barbell-bicep">Barbell Bicep Curls</label><br>
-        <input type="radio" name="exercise_type" value="pull-up" id="pull-up">
-        <label for="pull-up">Pull-up</label><br>
-        <input type="radio" name="exercise_type" value="squat" id="squat">
-        <label for="squat">Squat</label><br>
-        <input type="radio" name="exercise_type" value="walk" id="walk">
-        <label for="walk">Walk</label><br>
-        <input type="radio" name="exercise_type" value="sit-up" id="sit-up">
-        <label for="sit-up">Sit-up</label><br>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="carouselExampleCaptions" class="carousel slide">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='images/G.webp') }}"  class="d-block w-100" alt="..." />
+          <div class="d-none d-md-block">
+            <div class="slider-text-inner js-fullheight">
+              <div class="heading">
+                <h1>
+                  <b><center>AI Workouts</center></b><br />
+                  <span>Step-by-Step Guidance - at Home or at the Gym</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/F.jpg') }}"  class="d-block w-100" alt="..." />
+          <div class="d-none d-md-block">
+            <div class="slider-text-inner js-fullheight">
+              <div class="heading">
+                <h1>
+                  <b><center>AI Workouts</center></b><br />
+                  <span>Step-by-Step Guidance - at Home or at the Gym</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/E.jpg') }}"  class="d-block w-100" alt="..." />
+          <div class="d-none d-md-block">
+            <div class="slider-text-inner js-fullheight">
+              <div class="heading">
+                <h1>
+                  <b><center>AI Workouts</center></b><br />
+                  <span>Step-by-Step Guidance - at Home or at the Gym</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title text-center">
+<form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
 
+<option value="barbell-bicep">Barbell Bicep Curl</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+			<button type="submit"> Let's Go Jim !</button>
+          </form>
+          <h2><b>Why Us</b></h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="feature-full-1col">
+        <div
+          class="image"
+          style="
+            background-image: url(src="{{ url_for('static', filename='images/H.png') }}");
+            background-size: contain;
+            float: left;
+          "
+        >
+          <div class="descrip text-center"></div>
+        </div>
+        <div class="desc">
+          <h3 style="color: black">Build Muscle with Precision</h3>
+          <h5 style="color: rgb(81, 79, 79)">
+            Gain muscle and increase strength. Looking to develop the biceps or
+            the glutes? Want to do lower body on Mondays and upper body on
+            Wednesdays? Or focus on specific muscles on specific days? BodBot
+            can handle it all. Your workouts will reflect your needs, and no
+            muscle group will be left behind.
+          </h5>
+          <br />
+          <form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+          </form>
+        </div>
+      </div>
+
+      <div class="feature-full-1col">
+        <div class="desc">
+          <h3 style="color: black">Data-Driven Fitness</h3>
+          <h5 style="color: rgb(81, 79, 79)">
+            There are no cookie-cutter plans here. Every workout, exercise, set
+            and rep is tailored to your goals, your body and your progress. From
+            the macro-level of lifestyle and biometrics to the micro-level of
+            today's movement patterns and lifting response - BodBot lives and
+            breathes with you.
+          </h5>
+          <br />
+         <form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+          </form>
+        </div>
+        <div
+          class="image"
+          style="
+            background-image: url(src="{{ url_for('static', filename='images/I.png') }}");
+            background-size: contain;
+            float: right;
+          "
+        >
+          <div class="descrip text-center"></div>
+        </div>
+      </div>
+      <div class="feature-full-1col">
+        <div
+          class="image"
+          style="
+            background-image: url(src="{{ url_for('static', filename='images/J.png') }}");
+            background-size: contain;
+            float: left;
+          "
+        >
+          <div class="descrip text-center"></div>
+        </div>
+        <div class="desc">
+          <h3 style="color: black">Adaptation with Every Rep</h3>
+          <h5 style="color: rgb(81, 79, 79)">
+            There are no cookie-cutter plans here. Every workout, exercise, set
+            and rep is tailored to your goals, your body and your progress. From
+            the macro-level of lifestyle and biometrics to the micro-level of
+            today's movement patterns and lifting response - BodBot lives and
+            breathes with you.
+          </h5>
+          <br />
+          <form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <div class="feature-full-1col">
+        <div class="desc">
+          <h3 style="color: black">Make Every Rep Count</h3>
+          <h5 style="color: rgb(81, 79, 79)">
+            Individual recovery rate can vary widely, influenced by volume and
+            quality of nutrition, sleep, activity outside of the gym, stress
+            levels, etc. BodBot adapts your workouts based on the soreness and
+            recovery of your muscles; it responds not only to your ability, but
+            also your current training state. With this responsiveness, it can
+            more effectively dial in each day's workout, increasing efficiency
+            while reducing risk.
+          </h5>
+          <br />
+          <form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+          </form>
+        </div>
+        <div
+          class="image"
+          style="
+            background-image: url(src="{{ url_for('static', filename='images/K.png') }}");
+            background-size: contain;
+            float: right;
+          "
+        >
+          <div class="descrip text-center"></div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-title text-center">
+              <h2>IOS & Android versions coming soon...</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
