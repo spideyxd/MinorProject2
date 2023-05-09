@@ -11,7 +11,7 @@ def home():
 @app.route('/run_script', methods=['POST'])
 def run_script():
     exercise_type = request.form.get('exercise_type')
-    command = f"python main.py -t {exercise_type}"
+    command = f"python main.py -t {exercise_type} -vs {exercise_type}.mp4"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
     return redirect("/")
 if __name__ == "__main__":

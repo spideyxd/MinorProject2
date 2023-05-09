@@ -6,7 +6,7 @@ body {
 }
 .carousel > .carousel-inner > .carousel-item > img {
   width: 100%; /* Yeap you can change the width and height*/
-  height: 85vh;
+  height: 90vh;
   opacity: 80%;
 }
 .select-css
@@ -144,3 +144,57 @@ select > option{
   color: #52565b;
   padding: 7em 0;
 }
+.desc{
+  border-left: #f9764e double 2px;
+  border-right: #f9764e double 2px;
+  
+}
+.tape
+{
+  background-color: #ff5722;
+  height:10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.select-css
+{
+  padding: 4px;
+  border:black solid 1px;
+  border-radius: 10px;
+  background-color:#ff5722 ;
+  outline: none;
+  color: white;
+  font-family: sans-serif;
+}
+select > option{
+  padding:4px;
+}
+.btn{
+  padding: 1px;
+  margin-bottom: 0.7%;
+  border:black solid 1px;
+  border-radius: 5px;
+  background-color:#ff5722 ;
+  outline: none;
+  color: white;
+  font-family: sans-serif; 
+}
+.btn:hover{
+   border: #691c04e5 solid 2px;
+}
+
+/* <form method="POST" action="{{ url_for('run_script') }}">
+    <label for="exercise_type">Select an exercise type:</label>
+    <select name="exercise_type">
+              <option value="">Get Started |</option>
+
+<option value="barbell-bicep">Barbell Bicep Curl</option>
+              <option value="pull-up">Pull Ups</option>
+              <option value="push-up">Push Ups</option>
+              <option value="situp">Sit Ups</option>
+              <option value="squats">Squats</option>
+              <option value="walk">Walk</option>
+            </select>
+			<button type="submit"> Let's Go Jim !</button>
+          </form> */

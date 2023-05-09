@@ -8,7 +8,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -37,7 +40,11 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{ url_for('static', filename='images/G.webp') }}"  class="d-block w-100" alt="..." />
+          <img
+            src="{{ url_for('static', filename='images/G.webp') }}"
+            class="d-block w-100"
+            alt="..."
+          />
           <div class="d-none d-md-block">
             <div class="slider-text-inner js-fullheight">
               <div class="heading">
@@ -50,7 +57,11 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/F.jpg') }}"  class="d-block w-100" alt="..." />
+          <img
+            src="{{ url_for('static', filename='images/F.jpg') }}"
+            class="d-block w-100"
+            alt="..."
+          />
           <div class="d-none d-md-block">
             <div class="slider-text-inner js-fullheight">
               <div class="heading">
@@ -63,7 +74,11 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="{{ url_for('static', filename='images/E.jpg') }}"  class="d-block w-100" alt="..." />
+          <img
+            src="{{ url_for('static', filename='images/E.jpg') }}"
+            class="d-block w-100"
+            alt="..."
+          />
           <div class="d-none d-md-block">
             <div class="slider-text-inner js-fullheight">
               <div class="heading">
@@ -95,24 +110,29 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-    <br />
+
+    <div class="tape">
+      <form method="POST" action="{{ url_for('run_script') }}">
+        <label for="exercise_type"><h3>Select an exercise type:</h3></label>
+        <select class="select-css" name="exercise_type">
+          <option value="">Select |</option>
+
+          <option value="barbell-bicep">Barbell Bicep Curl</option>
+          <option value="pull-up">Pull Ups</option>
+          <option value="push-up">Push Ups</option>
+          <option value="sit-up">Sit Ups</option>
+          <option value="squat">Squats</option>
+          <!-- <option value="walk">Walk</option> -->
+        </select>
+        <button class="btn" type="submit" style="font-size: 17px">
+          Get Started!
+        </button>
+      </form>
+    </div>
+    <br /><br />
     <div class="row">
       <div class="col-md-12">
         <div class="section-title text-center">
-<form method="POST" action="{{ url_for('run_script') }}">
-    <label for="exercise_type">Select an exercise type:</label>
-    <select name="exercise_type">
-              <option value="">Get Started |</option>
-
-<option value="barbell-bicep">Barbell Bicep Curl</option>
-              <option value="pull-up">Pull Ups</option>
-              <option value="push-up">Push Ups</option>
-              <option value="situp">Sit Ups</option>
-              <option value="squats">Squats</option>
-              <option value="walk">Walk</option>
-            </select>
-			<button type="submit"> Let's Go Jim !</button>
-          </form>
           <h2><b>Why Us</b></h2>
         </div>
       </div>
@@ -122,7 +142,7 @@
         <div
           class="image"
           style="
-            background-image: url(src="{{ url_for('static', filename='images/H.png') }}");
+            background-image: url(/static/images/H.png);
             background-size: contain;
             float: left;
           "
@@ -139,17 +159,6 @@
             muscle group will be left behind.
           </h5>
           <br />
-          <form method="POST" action="{{ url_for('run_script') }}">
-    <label for="exercise_type">Select an exercise type:</label>
-    <select name="exercise_type">
-              <option value="">Get Started |</option>
-              <option value="pull-up">Pull Ups</option>
-              <option value="push-up">Push Ups</option>
-              <option value="situp">Sit Ups</option>
-              <option value="squats">Squats</option>
-              <option value="walk">Walk</option>
-            </select>
-          </form>
         </div>
       </div>
 
@@ -157,29 +166,18 @@
         <div class="desc">
           <h3 style="color: black">Data-Driven Fitness</h3>
           <h5 style="color: rgb(81, 79, 79)">
-            There are no cookie-cutter plans here. Every workout, exercise, set
-            and rep is tailored to your goals, your body and your progress. From
-            the macro-level of lifestyle and biometrics to the micro-level of
-            today's movement patterns and lifting response - BodBot lives and
-            breathes with you.
+            Gain deeper insights into your goals with powerful tracking and data
+            visualization tools. Get a wide-angle lens on your fitness,
+            nutrition and body, and understand in more detail how BodBot is
+            helping to improve your overall fitness. See your progress in new
+            ways and learn how your lifestyle is impacting results.
           </h5>
           <br />
-         <form method="POST" action="{{ url_for('run_script') }}">
-    <label for="exercise_type">Select an exercise type:</label>
-    <select name="exercise_type">
-              <option value="">Get Started |</option>
-              <option value="pull-up">Pull Ups</option>
-              <option value="push-up">Push Ups</option>
-              <option value="situp">Sit Ups</option>
-              <option value="squats">Squats</option>
-              <option value="walk">Walk</option>
-            </select>
-          </form>
         </div>
         <div
           class="image"
           style="
-            background-image: url(src="{{ url_for('static', filename='images/I.png') }}");
+            background-image: url(/static/images/I.png);
             background-size: contain;
             float: right;
           "
@@ -191,7 +189,7 @@
         <div
           class="image"
           style="
-            background-image: url(src="{{ url_for('static', filename='images/J.png') }}");
+            background-image: url(/static/images/J.png);
             background-size: contain;
             float: left;
           "
@@ -208,17 +206,6 @@
             breathes with you.
           </h5>
           <br />
-          <form method="POST" action="{{ url_for('run_script') }}">
-    <label for="exercise_type">Select an exercise type:</label>
-    <select name="exercise_type">
-              <option value="">Get Started |</option>
-              <option value="pull-up">Pull Ups</option>
-              <option value="push-up">Push Ups</option>
-              <option value="situp">Sit Ups</option>
-              <option value="squats">Squats</option>
-              <option value="walk">Walk</option>
-            </select>
-          </form>
         </div>
       </div>
       <div class="feature-full-1col">
@@ -234,22 +221,11 @@
             while reducing risk.
           </h5>
           <br />
-          <form method="POST" action="{{ url_for('run_script') }}">
-    <label for="exercise_type">Select an exercise type:</label>
-    <select name="exercise_type">
-              <option value="">Get Started |</option>
-              <option value="pull-up">Pull Ups</option>
-              <option value="push-up">Push Ups</option>
-              <option value="situp">Sit Ups</option>
-              <option value="squats">Squats</option>
-              <option value="walk">Walk</option>
-            </select>
-          </form>
         </div>
         <div
           class="image"
           style="
-            background-image: url(src="{{ url_for('static', filename='images/K.png') }}");
+            background-image: url(/static/images/K.png);
             background-size: contain;
             float: right;
           "

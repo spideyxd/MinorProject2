@@ -11,6 +11,7 @@ ap.add_argument("-t",
                 type=str,
                 help='Type of activity to do',
                 required=True)
+
 ap.add_argument("-vs",
                 "--video_source",
                 type=str,
@@ -23,7 +24,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_pose = mp.solutions.pose
 
 if args["video_source"] is not None:
-    cap = cv2.VideoCapture("Exercise Videos/" + args["video_source"])
+    cap = cv2.VideoCapture("Exercise_videos/" + args["video_source"])
 else:
     cap = cv2.VideoCapture(0)  # webcam
 
@@ -55,8 +56,9 @@ with mp_pose.Pose(min_detection_confidence=0.5,
                 args["exercise_type"], counter, status)
         except:
             pass
-
-        frame = score_table(args["exercise_type"], frame, counter, status)
+        table = np.zeros((200, 400, 3), np.uint8)
+        cv2.namedWindow("Score Table", cv2.WINDOW_NORMAL)
+        table = score_table(args["exercise_type"], table, counter, status)
 
         # render detections (for landmarks)
         mp_drawing.draw_landmarks(
@@ -72,6 +74,7 @@ with mp_pose.Pose(min_detection_confidence=0.5,
         )
 
         cv2.imshow('Video', frame)
+        cv2.imshow("Score Table", table)
         if cv2.waitKey(10) & 0xFF == ord('q'):
             break
 
